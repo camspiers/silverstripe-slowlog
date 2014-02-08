@@ -1,7 +1,7 @@
 {
 	"name": "camspiers/silverstripe-slowlog",
 	"type": "silverstripe-module",
-	"description": "Logs slow SilverStripe pages",
+	"description": "Logs slow SilverStripe requests",
 	"authors": [{
 		"name": "Cam Spiers",
 		"email": "camspiers@gmail.com"
