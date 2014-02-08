@@ -54,9 +54,16 @@ class RequestFilter implements SilverStripeRequestFilter
      */
     public function postRequest(SS_HTTPRequest $request, SS_HTTPResponse $response, DataModel $model)
     {
-        foreach ($this->times as $info) {
-            if ($request === $info[0] && microtime(true) - $info[1] > $this->timeLimit) {
-                $this->logger->info('Slow page', array('request' => $request));
+        foreach ($this->times as $key => $info) {
+            if ($request === $info[0]) {
+                $time = microtime(true) - $info[1];
+                if ($time > $this->timeLimit) {
+                    $this->logger->info(
+                        sprintf("Slow request time %01.2f secs at '%s'", $time, $request->getURL()),
+                        array('request' => (array) $request)
+                    );
+                }
+                unset($this->times[$key]);
             }
         }
     }
