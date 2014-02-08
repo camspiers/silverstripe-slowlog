@@ -1,0 +1,7 @@
+Injector:
+  SlowLogRequestFilter:
+    class: Camspiers\SlowLog\RequestFilter
+  RequestProcessor:
+    properties:
+      filters:
+        - '%$SlowLogRequestFilter'

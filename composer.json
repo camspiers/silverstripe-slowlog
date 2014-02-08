@@ -1,0 +1,21 @@
+{
+	"name": "camspiers/silverstripe-slowlog",
+	"type": "silverstripe-module",
+	"description": "Logs slow SilverStripe pages",
+	"authors": [{
+		"name": "Cam Spiers",
+		"email": "camspiers@gmail.com"
+	}],
+	"autoload": {
+		"psr-4": {
+			"Camspiers\\SlowLog\\": "src/"
+		}
+	},
+	"require": {
+		"psr/log": "~1.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~3.7",
+		"silverstripe/framework": "~3.1"
+	}
+}
