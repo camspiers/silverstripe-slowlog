@@ -12,6 +12,5 @@ Provide a logger to the request filter service:
 Injector:
   SlowLogRequestFilter:
     constructor:
-      0: %$Monolog
-      1: 1
+      0: '%$Monolog'
 ```
