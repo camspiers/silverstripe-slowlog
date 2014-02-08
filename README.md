@@ -2,8 +2,16 @@
 
 ## Installation (with composer)
 
+	composer require camspiers/silverstripe-slowlog:dev-master
+
 ## Usage
 
-## Unit testing
-    $ composer install --dev
-    $ vendor/bin/phpunit
+Provide a logger to the request filter service:
+
+```yaml
+Injector:
+  SlowLogRequestFilter:
+    constructor:
+      0: %$Monolog
+      1: 1
+```
