@@ -16,3 +16,15 @@ Injector:
     constructor:
       0: '%$Monolog'
 ```
+
+## Define a custom time
+
+Any request >1s is deemed "slow" by default you can change this as follows:
+
+```yaml
+Injector:
+  SlowLogRequestFilter:
+    constructor:
+      0: '%$Monolog'
+      1: 2
+```
