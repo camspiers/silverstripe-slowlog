@@ -22,13 +22,13 @@ class RequestFilter implements SilverStripeRequestFilter
     protected $logger;
 
     /**
-     * @var
+     * @var int|float
      */
     protected $timeLimit;
 
     /**
      * @param LoggerInterface $logger
-     * @param int $timeLimit
+     * @param int|float $timeLimit
      */
     public function __construct(LoggerInterface $logger, $timeLimit = 1)
     {
