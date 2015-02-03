@@ -59,8 +59,11 @@ class RequestFilter implements SilverStripeRequestFilter
                 $time = microtime(true) - $info[1];
                 if ($time > $this->timeLimit) {
                     $this->logger->info(
-                        sprintf("Slow request time %01.2f secs at '%s'", $time, $request->getURL()),
-                        array('request' => (array) $request)
+                        sprintf("Slow request time at '%s'", $request->getURL()),
+                        array(
+                            'time' => sprintf('%01.2fs', $time),
+                            'request' => (array) $request
+                        )
                     );
                 }
                 unset($this->times[$key]);
